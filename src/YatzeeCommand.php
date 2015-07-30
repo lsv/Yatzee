@@ -1,4 +1,13 @@
 <?php
+
+/*
+ * This file is part of the Lsv\Yatzee package.
+ *
+ * (c) Martin Aarhof <martin.aarhof@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Lsv\Yatzee;
 
 use Symfony\Component\Console\Command\Command;
@@ -17,14 +26,14 @@ use Symfony\Component\Console\Output\OutputInterface;
 class YatzeeCommand extends Command
 {
     /**
-     * Dice types
+     * Dice types.
      *
      * @var Types
      */
     private $types;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param Types $types
      */
@@ -35,9 +44,9 @@ class YatzeeCommand extends Command
     }
 
     /**
-     * Configure the command
+     * Configure the command.
      *
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function configure()
     {
@@ -62,7 +71,8 @@ class YatzeeCommand extends Command
 
     /**
      * {@inheritdoc}
-     * @param InputInterface $input
+     *
+     * @param InputInterface  $input
      * @param OutputInterface $output
      */
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -82,7 +92,7 @@ class YatzeeCommand extends Command
         }
 
         /**
-         * @var $tableData OutputData[]
+         * @var OutputData[]
          */
         $tableData = [];
         foreach ($this->types->getTypes() as $type) {
