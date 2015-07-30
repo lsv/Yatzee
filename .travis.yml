@@ -10,10 +10,10 @@ install:
   - php composer.phar install
 
 script:
-  - php vendor/bin/phpunit -c .
+  - php bin/phpunit -c .
 
 after_script:
-  - php vendor/bin/coveralls
+  - php bin/coveralls
 
 notifications:
   email:
