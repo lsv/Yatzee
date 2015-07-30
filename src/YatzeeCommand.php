@@ -1,4 +1,5 @@
 <?php
+
 namespace Lsv\Yatzee;
 
 use Symfony\Component\Console\Command\Command;
@@ -9,9 +10,13 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * Class YatzeeCommand
+ * @package Lsv\Yatzee
+ * @codeCoverageIgnore
+ */
 class YatzeeCommand extends Command
 {
-
     /**
      * @var Types
      */
@@ -28,47 +33,68 @@ class YatzeeCommand extends Command
         $this
             ->setName('yatzee')
             ->setDescription('Roll the dice')
-            ->addOption('rolls', 'r', InputOption::VALUE_OPTIONAL, 'How many times do you want to throw the dices?', 1000000)
+            ->addOption(
+                'rolls',
+                'r',
+                InputOption::VALUE_OPTIONAL,
+                'How many times do you want to throw the dices?',
+                1000000
+            )
+            ->addOption(
+                'dicesize',
+                's',
+                InputOption::VALUE_OPTIONAL,
+                'How many sides does the dice have',
+                6
+            )
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $numDices = 6;
-        for($r = 0; $r < $input->getOption('rolls'); $r++) {
+        for ($r = 0; $r < $input->getOption('rolls'); ++$r) {
             $dices = [];
-            for ($i = 1; $i <= $numDices; $i++) {
+            for ($i = 1; $i <= $numDices; ++$i) {
                 $dices[$i] = mt_rand(1, 6);
             }
 
-            foreach($this->types->getTypes() as $type) {
-                if ($type->isValid($numDices) && $type->count($r, $dices)) {
+            foreach ($this->types->getTypes() as $type) {
+                if ($type->isValid($numDices) && $type->count($r, $dices, $input->getOption('dicesize'))) {
                     continue 2;
                 }
             }
         }
 
-        /** @var OutputData[] $tableData */
+        /**
+ * @var OutputData[] $tableData
+*/
         $tableData = [];
-        foreach($this->types->getTypes() as $type) {
+        foreach ($this->types->getTypes() as $type) {
             if ($type->canWrite()) {
-                $tableData[] = $type->write($input->getOption('rolls'), new OutputData($type->getName(), ['<info>Dice</info>', '<info>Times</info>', '<info>Percent</info>']));
+                $tableData[] = $type->write(
+                    $input->getOption('rolls'),
+                    new OutputData(
+                        $type->getName(),
+                        ['<info>Dice</info>', '<info>Times</info>', '<info>Percent</info>']
+                    )
+                );
             }
         }
 
-        foreach($tableData as $data) {
+        foreach ($tableData as $data) {
             $table = new Table($output);
-            $table->setHeaders([
+            $table->setHeaders(
+                [
                 [new TableCell($data->getName(), ['colspan' => 3])],
-                $data->getHeaders()
-            ]);
+                $data->getHeaders(),
+                ]
+            );
             $table->addRows($data->getRows());
             $table->addRow(new TableSeparator());
-            $table->addRow(['<info>First</info>', $data->getFirst() + 1]);
+            $table->addRow(['<info>First</info>', $data->getFirst()]);
             $table->addRow(['<info>Total</info>', $data->getTotal(), $data->getTotalPercent()]);
             $table->render();
         }
-
     }
-
 }

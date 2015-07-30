@@ -1,12 +1,17 @@
 <?php
+
 namespace Lsv\Yatzee;
 
 use Symfony\Component\Console\Application as BaseApplication;
 use Symfony\Component\Console\Input\InputInterface;
 
+/**
+ * Class Application
+ * @package Lsv\Yatzee
+ * @codeCoverageIgnore
+ */
 class Application extends BaseApplication
 {
-
     /**
      * @var Types
      */
@@ -22,6 +27,7 @@ class Application extends BaseApplication
      * Gets the name of the command based on input.
      *
      * @param InputInterface $input The input interface
+     *
      * @return string The command name
      */
     protected function getCommandName(InputInterface $input)
@@ -38,6 +44,7 @@ class Application extends BaseApplication
     {
         $defaultCommands = parent::getDefaultCommands();
         $defaultCommands[] = new YatzeeCommand($this->types);
+
         return $defaultCommands;
     }
 
@@ -49,7 +56,7 @@ class Application extends BaseApplication
     {
         $inputDefinition = parent::getDefinition();
         $inputDefinition->setArguments();
+
         return $inputDefinition;
     }
-
 }

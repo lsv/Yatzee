@@ -1,13 +1,14 @@
 <?php
-namespace Lsv\Yatzee\Types;
 
-use Lsv\Yatzee\OutputData;
+namespace Lsv\Yatzee\Types;
 
 class FiveOfaKind extends AbstractOfaKind
 {
+    protected $ofaKind = 5;
 
     /**
      * @param int $numDices
+     *
      * @return bool
      */
     public function isValid($numDices)
@@ -16,28 +17,8 @@ class FiveOfaKind extends AbstractOfaKind
     }
 
     /**
-     * @param integer $numRoll
-     * @param array $dices
-     * @return bool
-     */
-    public function count($numRoll, array $dices)
-    {
-        return self::ofaKindCount($numRoll, $dices, 5);
-    }
-
-    /**
-     * Get array of data output
-     * @param int $rolls
-     * @param OutputData $output
-     * @return OutputData
-     */
-    public function write($rolls, OutputData $output)
-    {
-        return self::ofaKindWrite($rolls, $output, 5);
-    }
-
-    /**
-     * Name of the type
+     * Name of the type.
+     *
      * @return string
      */
     public function getName()

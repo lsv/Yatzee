@@ -1,32 +1,40 @@
 <?php
+
 namespace Lsv\Yatzee\Types;
 
 use Lsv\Yatzee\TypeInterface;
 
 abstract class AbstractType implements TypeInterface
 {
-
     protected $dices;
 
     protected function getDice($dice)
     {
         switch ($dice) {
-            case 1: return '⚀';
-            case 2: return '⚁';
-            case 3: return '⚂';
-            case 4: return '⚃';
-            case 5: return '⚄';
-            case 6: return '⚅';
-            default: return $dice;
+            case 1:
+                return '⚀';
+            case 2:
+                return '⚁';
+            case 3:
+                return '⚂';
+            case 4:
+                return '⚃';
+            case 5:
+                return '⚄';
+            case 6:
+                return '⚅';
+            default:
+                return $dice;
         }
     }
 
-    protected function getValues(array $dices)
+    protected function getValues(array $dices, $dicesize)
     {
         $values = [];
-        for($i = 1; $i <= count($dices); $i++) {
-            $values[$i] = count(array_keys($dices, $i));
+        for ($s = 0; $s <= $dicesize; $s++) {
+            $values[$s] = count(array_keys($dices, $s, true));
         }
+
         return $values;
     }
 
@@ -36,12 +44,12 @@ abstract class AbstractType implements TypeInterface
     }
 
     /**
-     * Can write data
+     * Can write data.
+     *
      * @return bool
      */
     public function canWrite()
     {
         return isset($this->dices['first']);
     }
-
 }

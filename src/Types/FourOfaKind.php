@@ -1,13 +1,14 @@
 <?php
+
 namespace Lsv\Yatzee\Types;
 
 class FourOfaKind extends AbstractOfaKind
 {
-
     protected $ofaKind = 4;
 
     /**
      * @param int $numDices
+     *
      * @return bool
      */
     public function isValid($numDices)
@@ -16,7 +17,8 @@ class FourOfaKind extends AbstractOfaKind
     }
 
     /**
-     * Name of the type
+     * Name of the type.
+     *
      * @return string
      */
     public function getName()

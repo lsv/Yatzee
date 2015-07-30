@@ -1,9 +1,14 @@
 <?php
+
 namespace Lsv\Yatzee;
 
+/**
+ * Class Types
+ * @package Lsv\Yatzee
+ * @codeCoverageIgnore
+ */
 class Types
 {
-
     /**
      * @var TypeInterface[]
      */
@@ -24,5 +29,4 @@ class Types
     {
         return $this->types;
     }
-
 }

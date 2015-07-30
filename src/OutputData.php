@@ -1,16 +1,21 @@
 <?php
+
 namespace Lsv\Yatzee;
 
+/**
+ * Class OutputData
+ * @package Lsv\Yatzee
+ * @codeCoverageIgnore
+ */
 class OutputData
 {
-
     /**
      * @var array
      */
     protected $rows = [];
 
     /**
-     * @var string
+     * @var int
      */
     protected $first;
 
@@ -41,7 +46,8 @@ class OutputData
     }
 
     /**
-     * Gets the Name
+     * Gets the Name.
+     *
      * @return string
      */
     public function getName()
@@ -50,7 +56,8 @@ class OutputData
     }
 
     /**
-     * Gets the Headers
+     * Gets the Headers.
+     *
      * @return array
      */
     public function getHeaders()
@@ -59,27 +66,32 @@ class OutputData
     }
 
     /**
-     * Gets the First
-     * @return string
+     * Gets the First.
+     *
+     * @return int
      */
     public function getFirst()
     {
-        return $this->first;
+        return $this->first + 1;
     }
 
     /**
-     * Sets the First
+     * Sets the First.
+     *
      * @param string $first
+     *
      * @return OutputData
      */
     public function setFirst($first)
     {
         $this->first = $first;
+
         return $this;
     }
 
     /**
-     * Gets the Total
+     * Gets the Total.
+     *
      * @return string
      */
     public function getTotal()
@@ -88,28 +100,34 @@ class OutputData
     }
 
     /**
-     * Sets the Total
+     * Sets the Total.
+     *
      * @param string $total
+     *
      * @return OutputData
      */
     public function setTotal($total)
     {
         $this->total = $total;
+
         return $this;
     }
 
     /**
      * @param string $percent
+     *
      * @return $this
      */
     public function setTotalPercent($percent)
     {
         $this->totalPercent = $percent;
+
         return $this;
     }
 
     /**
-     * Gets the TotalPercent
+     * Gets the TotalPercent.
+     *
      * @return string
      */
     public function getTotalPercent()
@@ -118,7 +136,8 @@ class OutputData
     }
 
     /**
-     * Gets the Rows
+     * Gets the Rows.
+     *
      * @return array
      */
     public function getRows()
@@ -128,12 +147,13 @@ class OutputData
 
     /**
      * @param $row
+     *
      * @return $this
      */
     public function addRow($row)
     {
         $this->rows[] = $row;
+
         return $this;
     }
-
 }
