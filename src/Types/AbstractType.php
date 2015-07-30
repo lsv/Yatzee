@@ -52,4 +52,17 @@ abstract class AbstractType implements TypeInterface
     {
         return isset($this->dices['first']);
     }
+
+    protected function setDices($roll, $key1, $key2)
+    {
+        if (!isset($this->dices['first'])) {
+            $this->dices['first'] = $roll;
+        }
+
+        if (!isset($this->dices[$key1][$key2])) {
+            $this->dices[$key1][$key2] = 1;
+        } else {
+            ++$this->dices[$key1][$key2];
+        }
+    }
 }

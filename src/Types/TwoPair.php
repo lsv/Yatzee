@@ -31,18 +31,7 @@ class TwoPair extends AbstractType
             return false;
         }
 
-        $key1 = $keys[0];
-        $key2 = $keys[1];
-        if (!isset($this->dices['first'])) {
-            $this->dices['first'] = $numRoll;
-        }
-
-        if (!isset($this->dices[$key1][$key2])) {
-            $this->dices[$key1][$key2] = 1;
-        } else {
-            ++$this->dices[$key1][$key2];
-        }
-
+        $this->setDices($numRoll, $keys[0], $keys[1]);
         return true;
     }
 

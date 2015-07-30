@@ -27,19 +27,9 @@ class FullHouse extends AbstractType
     {
         $valueCount = self::getValues($dices, $dicesize);
         if (in_array(3, $valueCount) && in_array(2, $valueCount)) {
-            if (!isset($this->dices['first'])) {
-                $this->dices['first'] = $numRoll;
-            }
-
             $key1 = array_search(3, $valueCount, true);
             $key2 = array_search(2, $valueCount, true);
-
-            if (!isset($this->dices[$key1][$key2])) {
-                $this->dices[$key1][$key2] = 1;
-            } else {
-                ++$this->dices[$key1][$key2];
-            }
-
+            $this->setDices($numRoll, $key1, $key2);
             return true;
         }
 
