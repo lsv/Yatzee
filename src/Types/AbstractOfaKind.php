@@ -1,5 +1,4 @@
 <?php
-
 namespace Lsv\Yatzee\Types;
 
 use Lsv\Yatzee\OutputData;

@@ -1,5 +1,4 @@
 <?php
-
 namespace Lsv\Yatzee;
 
 use Symfony\Component\Console\Command\Command;
@@ -18,16 +17,28 @@ use Symfony\Component\Console\Output\OutputInterface;
 class YatzeeCommand extends Command
 {
     /**
+     * Dice types
+     *
      * @var Types
      */
     private $types;
 
+    /**
+     * Construct
+     *
+     * @param Types $types
+     */
     public function __construct(Types $types)
     {
         $this->types = $types;
         parent::__construct('yatzee');
     }
 
+    /**
+     * Configure the command
+     *
+     * @inheritdoc
+     */
     protected function configure()
     {
         $this
@@ -49,6 +60,11 @@ class YatzeeCommand extends Command
             );
     }
 
+    /**
+     * {@inheritdoc}
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $numDices = 6;
@@ -66,7 +82,7 @@ class YatzeeCommand extends Command
         }
 
         /**
-         * @var OutputData[]
+         * @var $tableData OutputData[]
          */
         $tableData = [];
         foreach ($this->types->getTypes() as $type) {

@@ -46,25 +46,7 @@ class TwoPair extends AbstractType
      */
     public function write($rolls, OutputData $output)
     {
-        ksort($this->dices);
-        $totals = 0;
-        foreach ($this->dices as $k1 => $keys) {
-            if ($k1 === 'first') {
-                continue;
-            }
-            foreach ($keys as $k2 => $times) {
-                $totals += $times;
-                $dice = str_repeat(self::getDice($k1), 2);
-                $dice .= str_repeat(self::getDice($k2), 2);
-                $output->addRow([$dice, $times, $this->writePercent($rolls, $times)]);
-            }
-        }
-
-        $output->setFirst($this->dices['first']);
-        $output->setTotalPercent($this->writePercent($rolls, $totals));
-        $output->setTotal($totals);
-
-        return $output;
+        return $this->writeMultiple(2, 2, $rolls, $output);
     }
 
     /**
