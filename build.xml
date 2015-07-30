@@ -4,7 +4,7 @@
     <property name="title" value="${phing.project.name}" />
 
     <property name="rootdir" value="." />
-    <property name="bindir" value="${rootdir}/vendor/bin" />
+    <property name="bindir" value="${rootdir}/bin" />
     <property name="srcdir" value="${rootdir}/src" />
     <property name="builddir" value="${rootdir}/.build" />
     <property name="docsdir" value="${rootdir}/.build/docs" />

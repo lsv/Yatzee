@@ -87,7 +87,7 @@ class YatzeeCommand extends Command
             $dices = [];
             for ($i = 1; $i <= $numDices; ++$i) {
                 if (version_compare(PHP_VERSION, '7.0.0', '>=')) {
-                    $dices[$i] = random_int(1,6);
+                    $dices[$i] = random_int(1, 6);
                 } else {
                     $dices[$i] = mt_rand(1, 6);
                 }
