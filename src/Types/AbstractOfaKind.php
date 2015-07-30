@@ -8,15 +8,29 @@
  * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
  */
 
+/**
+ * Do the count for "of a kind" types
+ */
 namespace Lsv\Yatzee\Types;
 
 use Lsv\Yatzee\OutputData;
 
+/**
+ * Class AbstractOfaKind
+ * @package Lsv\Yatzee\Types
+ */
 abstract class AbstractOfaKind extends AbstractType
 {
+    /**
+     * How many of the kind do we need
+     *
+     * @var int
+     */
     protected $ofaKind = 0;
 
     /**
+     * Count the dices
+     *
      * @param int   $numRoll
      * @param array $dices
      * @param int   $dicesize
@@ -28,6 +42,16 @@ abstract class AbstractOfaKind extends AbstractType
         return self::ofaKindCount($numRoll, $dices, $dicesize, $this->ofaKind);
     }
 
+    /**
+     * Count the dices
+     *
+     * @param int $numRoll
+     * @param array $dices
+     * @param int $dicesize
+     * @param int $ofaKind
+     *
+     * @return bool
+     */
     protected function ofaKindCount($numRoll, array $dices, $dicesize, $ofaKind)
     {
         $valueCount = self::getValues($dices, $dicesize);
@@ -62,6 +86,15 @@ abstract class AbstractOfaKind extends AbstractType
         return self::ofaKindWrite($rolls, $output, $this->ofaKind);
     }
 
+    /**
+     * Get array of data output
+     *
+     * @param int $rolls
+     * @param OutputData $output
+     * @param int $ofaKind
+     *
+     * @return OutputData
+     */
     protected function ofaKindWrite($rolls, OutputData $output, $ofaKind)
     {
         ksort($this->dices);

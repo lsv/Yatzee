@@ -8,13 +8,22 @@
  * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
  */
 
+/**
+ * Count two pairs
+ */
 namespace Lsv\Yatzee\Types;
 
 use Lsv\Yatzee\OutputData;
 
+/**
+ * Class TwoPair
+ * @package Lsv\Yatzee\Types
+ */
 class TwoPair extends AbstractType
 {
     /**
+     * Is it valid to run
+     *
      * @param int $numDices
      *
      * @return bool
@@ -25,6 +34,8 @@ class TwoPair extends AbstractType
     }
 
     /**
+     * Count the values
+     *
      * @param int   $numRoll
      * @param array $dices
      * @param int   $dicesize

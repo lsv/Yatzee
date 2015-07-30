@@ -8,6 +8,9 @@
  * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
  */
 
+/**
+ * Array of types
+ */
 namespace Lsv\Yatzee;
 
 /**
@@ -18,11 +21,15 @@ namespace Lsv\Yatzee;
 class Types
 {
     /**
+     * Types
+     *
      * @var TypeInterface[]
      */
     protected $types = [];
 
     /**
+     * Add a type
+     *
      * @param TypeInterface $type
      */
     public function addType(TypeInterface $type)
@@ -31,6 +38,8 @@ class Types
     }
 
     /**
+     * Get types
+     *
      * @return TypeInterface[]
      */
     public function getTypes()

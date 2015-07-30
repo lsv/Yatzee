@@ -8,6 +8,9 @@
  * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
  */
 
+/**
+ * Output data generator
+ */
 namespace Lsv\Yatzee;
 
 /**
@@ -18,35 +21,53 @@ namespace Lsv\Yatzee;
 class OutputData
 {
     /**
+     * Rows of data
+     *
      * @var array
      */
     protected $rows = [];
 
     /**
+     * When was the first roll
+     *
      * @var int
      */
     protected $first;
 
     /**
+     * Total number of rolls
+     *
      * @var string
      */
     protected $total;
 
     /**
+     * Name of the type
+     *
      * @var string
      */
     private $name;
 
     /**
+     * Headers
+     *
      * @var array
      */
     private $headers;
 
     /**
+     * Percent for total
+     *
      * @var string
      */
     private $totalPercent;
 
+    /**
+     * Construct
+     *
+     * @param string $name
+     * @param array $headers
+     */
     public function __construct($name, array $headers)
     {
         $this->name = $name;
@@ -86,7 +107,7 @@ class OutputData
     /**
      * Sets the First.
      *
-     * @param string $first
+     * @param int $first
      *
      * @return OutputData
      */
@@ -122,6 +143,8 @@ class OutputData
     }
 
     /**
+     * Set total percent
+     *
      * @param string $percent
      *
      * @return $this
@@ -154,6 +177,8 @@ class OutputData
     }
 
     /**
+     * Add a row of data
+     *
      * @param $row
      *
      * @return $this

@@ -8,13 +8,25 @@
  * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
  */
 
+/**
+ * Methods for types
+ */
 namespace Lsv\Yatzee\Types;
 
 use Lsv\Yatzee\OutputData;
 use Lsv\Yatzee\TypeInterface;
 
+/**
+ * Class AbstractType
+ * @package Lsv\Yatzee\Types
+ */
 abstract class AbstractType implements TypeInterface
 {
+    /**
+     * Dice values
+     *
+     * @var array
+     */
     protected $dices;
 
     /**
@@ -27,6 +39,13 @@ abstract class AbstractType implements TypeInterface
         return isset($this->dices['first']);
     }
 
+    /**
+     * Get nice dices
+     *
+     * @param int $dice
+     *
+     * @return string
+     */
     protected function getDice($dice)
     {
         switch ($dice) {
@@ -47,6 +66,13 @@ abstract class AbstractType implements TypeInterface
         }
     }
 
+    /**
+     * Transform dices to values
+     *
+     * @param array $dices
+     * @param int $dicesize
+     * @return array
+     */
     protected function getValues(array $dices, $dicesize)
     {
         $values = [];
@@ -57,11 +83,25 @@ abstract class AbstractType implements TypeInterface
         return $values;
     }
 
+    /**
+     * Write percent
+     *
+     * @param int $rolls
+     * @param int $timesHit
+     * @return string
+     */
     protected function writePercent($rolls, $timesHit)
     {
         return sprintf('%01.3f%%', ($timesHit / $rolls) * 100);
     }
 
+    /**
+     * Calculate dice array
+     *
+     * @param int $roll
+     * @param mixed $key1
+     * @param mixed $key2
+     */
     protected function setDices($roll, $key1, $key2)
     {
         if (!isset($this->dices['first'])) {
@@ -75,6 +115,15 @@ abstract class AbstractType implements TypeInterface
         }
     }
 
+    /**
+     * Write for multiple dice sizes
+     *
+     * @param int $size1
+     * @param int $size2
+     * @param int $rolls
+     * @param OutputData $output
+     * @return OutputData
+     */
     protected function writeMultiple($size1, $size2, $rolls, OutputData $output)
     {
         ksort($this->dices);

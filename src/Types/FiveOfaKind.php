@@ -8,13 +8,27 @@
  * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
  */
 
+/**
+ * Count five of a kind
+ */
 namespace Lsv\Yatzee\Types;
 
+/**
+ * Class FiveOfaKind
+ * @package Lsv\Yatzee\Types
+ */
 class FiveOfaKind extends AbstractOfaKind
 {
+    /**
+     * How many of the kind do we need
+     *
+     * @var int
+     */
     protected $ofaKind = 5;
 
     /**
+     * Is it valid to run
+     *
      * @param int $numDices
      *
      * @return bool

@@ -8,6 +8,10 @@
  * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
  */
 
+/**
+ * Command to run the yatzee generator
+ */
+
 namespace Lsv\Yatzee;
 
 use Symfony\Component\Console\Command\Command;
