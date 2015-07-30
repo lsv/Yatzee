@@ -30,6 +30,7 @@ class FullHouse extends AbstractType
             $key1 = array_search(3, $valueCount, true);
             $key2 = array_search(2, $valueCount, true);
             $this->setDices($numRoll, $key1, $key2);
+
             return true;
         }
 

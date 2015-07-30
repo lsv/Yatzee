@@ -32,6 +32,7 @@ class TwoPair extends AbstractType
         }
 
         $this->setDices($numRoll, $keys[0], $keys[1]);
+
         return true;
     }
 
