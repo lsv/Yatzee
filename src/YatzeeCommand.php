@@ -86,7 +86,11 @@ class YatzeeCommand extends Command
         for ($r = 0; $r < $input->getOption('rolls'); ++$r) {
             $dices = [];
             for ($i = 1; $i <= $numDices; ++$i) {
-                $dices[$i] = mt_rand(1, 6);
+                if (version_compare(PHP_VERSION, '7.0.0', '>=')) {
+                    $dices[$i] = random_int(1,6);
+                } else {
+                    $dices[$i] = mt_rand(1, 6);
+                }
             }
 
             foreach ($this->types->getTypes() as $type) {
@@ -96,9 +100,6 @@ class YatzeeCommand extends Command
             }
         }
 
-        /*
-         * @var OutputData[]
-         */
         $tableData = [];
         foreach ($this->types->getTypes() as $type) {
             if ($type->canWrite()) {

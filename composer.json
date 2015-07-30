@@ -1,5 +1,15 @@
 {
+    "name": "lsv/yatzee",
+    "description": "Dice roller",
+    "authors": [
+        {
+            "name": "Martin Aarhof",
+            "email": "martin.aarhof@gmail.com"
+        }
+    ],
+
     "require": {
+        "php": ">=5.5",
         "symfony/console": "^2.7"
     },
     "autoload": {

@@ -4,7 +4,7 @@ var run = require('gulp-run');
 var phpunit = require('gulp-phpunit');
 
 gulp.task('test', function() {
-    gulp.src('Tests/**/*.php')
+    gulp.src('tests/**/*.php')
         .pipe(run('clear'))
         .pipe(phpunit('', { notify: true}))
         .on('error', notify.onError({
@@ -15,7 +15,7 @@ gulp.task('test', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(['Tests/**/*.php', 'src/**/*.php'], ['test'])
+    gulp.watch(['tests/**/*.php', 'src/**/*.php'], ['test'])
 });
 
 gulp.task('default', ['test', 'watch']);
