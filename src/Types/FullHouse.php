@@ -17,10 +17,10 @@ class FullHouse extends AbstractType
     }
 
     /**
-     * @param int $numRoll
+     * @param int   $numRoll
      * @param array $dices
+     * @param int   $dicesize
      *
-     * @param int $dicesize
      * @return bool
      */
     public function count($numRoll, array $dices, $dicesize)

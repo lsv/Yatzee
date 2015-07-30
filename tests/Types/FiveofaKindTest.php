@@ -1,12 +1,12 @@
 <?php
-namespace Lsv\YatzeeTests\Types;
+
+namespace Lsv\Yatzeetests\Types;
 
 use Lsv\Yatzee\TypeInterface;
 use Lsv\Yatzee\Types\FiveOfaKind;
 
 class FiveofaKindTest extends AbstractOfaKindTest
 {
-
     public function validProvider()
     {
         return [
@@ -24,9 +24,9 @@ class FiveofaKindTest extends AbstractOfaKindTest
     public function diceProvider()
     {
         return [
-            [ [1,1,1,1,1], true, [str_repeat($this->getDice(1), 5), 1, '100.000%'] ],
-            [ [2,2,2,2,1], false, [] ],
-            [ [2,2,2,2,2], true, [str_repeat($this->getDice(2), 5), 1, '100.000%'] ],
+            [[1,1,1,1,1], true, [str_repeat($this->getDice(1), 5), 1, '100.000%']],
+            [[2,2,2,2,1], false, []],
+            [[2,2,2,2,2], true, [str_repeat($this->getDice(2), 5), 1, '100.000%']],
         ];
     }
 

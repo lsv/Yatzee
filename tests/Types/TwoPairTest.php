@@ -1,12 +1,12 @@
 <?php
-namespace Lsv\YatzeeTests\Types;
+
+namespace Lsv\Yatzeetests\Types;
 
 use Lsv\Yatzee\TypeInterface;
 use Lsv\Yatzee\Types\TwoPair;
 
 class TwoPairTest extends AbstractOfaKindTest
 {
-
     public function validProvider()
     {
         return [
@@ -29,10 +29,10 @@ class TwoPairTest extends AbstractOfaKindTest
     public function diceProvider()
     {
         return [
-            [ [1,1,2,2,3], true, [$this->writeDice(1,2), 1, '100.000%'] ],
-            [ [2,2,3,3,4], true, [$this->writeDice(2,3), 1, '100.000%'] ],
-            [ [2,2,1,1,3], true, [$this->writeDice(1,2), 1, '100.000%'] ],
-            [ [1,2,2,3,4], false, [] ],
+            [[1,1,2,2,3], true, [$this->writeDice(1, 2), 1, '100.000%']],
+            [[2,2,3,3,4], true, [$this->writeDice(2, 3), 1, '100.000%']],
+            [[2,2,1,1,3], true, [$this->writeDice(1, 2), 1, '100.000%']],
+            [[1,2,2,3,4], false, []],
         ];
     }
 

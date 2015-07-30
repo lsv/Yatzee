@@ -3,8 +3,8 @@
 namespace Lsv\Yatzee;
 
 /**
- * Class OutputData
- * @package Lsv\Yatzee
+ * Class OutputData.
+ *
  * @codeCoverageIgnore
  */
 class OutputData

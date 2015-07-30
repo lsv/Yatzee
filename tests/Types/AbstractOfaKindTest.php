@@ -1,12 +1,12 @@
 <?php
-namespace Lsv\YatzeeTests\Types;
+
+namespace Lsv\Yatzeetests\Types;
 
 use Lsv\Yatzee\Types\AbstractOfaKind;
 use Lsv\YatzeeTests\TestBase;
 
 abstract class AbstractOfaKindTest extends TestBase
 {
-
     /**
      * @return array
      */
@@ -29,10 +29,11 @@ abstract class AbstractOfaKindTest extends TestBase
 
     /**
      * @dataProvider diceProvider
+     *
      * @param array $dices
-     * @param bool $countReturn
+     * @param bool  $countReturn
      * @param array $outputData
-     * @param int $dicesize
+     * @param int   $dicesize
      */
     public function test_count($dices, $countReturn, $outputData, $dicesize = 6)
     {
@@ -45,12 +46,12 @@ abstract class AbstractOfaKindTest extends TestBase
             $data = $tester->write(1, $this->getOutputData());
             $this->assertEquals($outputData, $data->getRows()[0], 'writer');
         }
-
     }
 
     /**
      * @dataProvider validProvider
-     * @param int $dices
+     *
+     * @param int  $dices
      * @param bool $return
      */
     public function test_valid($dices, $return)
@@ -64,5 +65,4 @@ abstract class AbstractOfaKindTest extends TestBase
         $tester = $this->getTester();
         $this->assertEquals($this->getTesterName(), $tester->getName(), 'name');
     }
-
 }

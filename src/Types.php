@@ -3,8 +3,8 @@
 namespace Lsv\Yatzee;
 
 /**
- * Class Types
- * @package Lsv\Yatzee
+ * Class Types.
+ *
  * @codeCoverageIgnore
  */
 class Types

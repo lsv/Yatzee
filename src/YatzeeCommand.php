@@ -11,8 +11,8 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Class YatzeeCommand
- * @package Lsv\Yatzee
+ * Class YatzeeCommand.
+ *
  * @codeCoverageIgnore
  */
 class YatzeeCommand extends Command
@@ -46,8 +46,7 @@ class YatzeeCommand extends Command
                 InputOption::VALUE_OPTIONAL,
                 'How many sides does the dice have',
                 6
-            )
-        ;
+            );
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -67,8 +66,8 @@ class YatzeeCommand extends Command
         }
 
         /**
- * @var OutputData[] $tableData
-*/
+         * @var OutputData[]
+         */
         $tableData = [];
         foreach ($this->types->getTypes() as $type) {
             if ($type->canWrite()) {

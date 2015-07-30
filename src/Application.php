@@ -6,8 +6,8 @@ use Symfony\Component\Console\Application as BaseApplication;
 use Symfony\Component\Console\Input\InputInterface;
 
 /**
- * Class Application
- * @package Lsv\Yatzee
+ * Class Application.
+ *
  * @codeCoverageIgnore
  */
 class Application extends BaseApplication
