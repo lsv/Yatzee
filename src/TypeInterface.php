@@ -5,22 +5,23 @@
  *
  * (c) Martin Aarhof <martin.aarhof@gmail.com>
  *
- * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
  */
 
 /**
- * Interface for yatzee types
+ * Interface for yatzee types.
  */
+
 namespace Lsv\Yatzee;
 
 /**
- * Interface TypeInterface
- * @package Lsv\Yatzee
+ * Interface TypeInterface.
  */
 interface TypeInterface
 {
     /**
-     * Is it valid to run
+     * Is it valid to run.
      *
      * @param int $numDices
      *
@@ -29,7 +30,7 @@ interface TypeInterface
     public function isValid($numDices);
 
     /**
-     * Count the values
+     * Count the values.
      *
      * @param int   $numRoll
      * @param array $dices

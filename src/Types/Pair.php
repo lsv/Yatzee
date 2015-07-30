@@ -5,29 +5,30 @@
  *
  * (c) Martin Aarhof <martin.aarhof@gmail.com>
  *
- * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
  */
 
 /**
- * Count pairs
+ * Count pairs.
  */
+
 namespace Lsv\Yatzee\Types;
 
 /**
- * Class Pair
- * @package Lsv\Yatzee\Types
+ * Class Pair.
  */
 class Pair extends AbstractOfaKind
 {
     /**
-     * How many of the kind do we need
+     * How many of the kind do we need.
      *
      * @var int
      */
     protected $ofaKind = 2;
 
     /**
-     * Is it valid to run
+     * Is it valid to run.
      *
      * @param int $numDices
      *

@@ -5,31 +5,32 @@
  *
  * (c) Martin Aarhof <martin.aarhof@gmail.com>
  *
- * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
  */
 
 /**
- * Do the count for "of a kind" types
+ * Do the count for "of a kind" types.
  */
+
 namespace Lsv\Yatzee\Types;
 
 use Lsv\Yatzee\OutputData;
 
 /**
- * Class AbstractOfaKind
- * @package Lsv\Yatzee\Types
+ * Class AbstractOfaKind.
  */
 abstract class AbstractOfaKind extends AbstractType
 {
     /**
-     * How many of the kind do we need
+     * How many of the kind do we need.
      *
      * @var int
      */
     protected $ofaKind = 0;
 
     /**
-     * Count the dices
+     * Count the dices.
      *
      * @param int   $numRoll
      * @param array $dices
@@ -43,12 +44,12 @@ abstract class AbstractOfaKind extends AbstractType
     }
 
     /**
-     * Count the dices
+     * Count the dices.
      *
-     * @param int $numRoll
+     * @param int   $numRoll
      * @param array $dices
-     * @param int $dicesize
-     * @param int $ofaKind
+     * @param int   $dicesize
+     * @param int   $ofaKind
      *
      * @return bool
      */
@@ -87,11 +88,11 @@ abstract class AbstractOfaKind extends AbstractType
     }
 
     /**
-     * Get array of data output
+     * Get array of data output.
      *
-     * @param int $rolls
+     * @param int        $rolls
      * @param OutputData $output
-     * @param int $ofaKind
+     * @param int        $ofaKind
      *
      * @return OutputData
      */

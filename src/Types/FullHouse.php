@@ -5,24 +5,25 @@
  *
  * (c) Martin Aarhof <martin.aarhof@gmail.com>
  *
- * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
  */
 
 /**
- * Counter for full houses
+ * Counter for full houses.
  */
+
 namespace Lsv\Yatzee\Types;
 
 use Lsv\Yatzee\OutputData;
 
 /**
- * Class FullHouse
- * @package Lsv\Yatzee\Types
+ * Class FullHouse.
  */
 class FullHouse extends AbstractType
 {
     /**
-     * Is it valid to run
+     * Is it valid to run.
      *
      * @param int $numDices
      *
@@ -34,7 +35,7 @@ class FullHouse extends AbstractType
     }
 
     /**
-     * Count the values
+     * Count the values.
      *
      * @param int   $numRoll
      * @param array $dices

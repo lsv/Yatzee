@@ -5,12 +5,14 @@
  *
  * (c) Martin Aarhof <martin.aarhof@gmail.com>
  *
- * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
  */
 
 /**
- * Application for yatzee
+ * Application for yatzee.
  */
+
 namespace Lsv\Yatzee;
 
 use Symfony\Component\Console\Application as BaseApplication;
@@ -24,14 +26,14 @@ use Symfony\Component\Console\Input\InputInterface;
 class Application extends BaseApplication
 {
     /**
-     * Yatzee types
+     * Yatzee types.
      *
      * @var Types
      */
     private $types;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param Types $types
      */

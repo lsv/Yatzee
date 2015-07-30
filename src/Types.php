@@ -5,12 +5,14 @@
  *
  * (c) Martin Aarhof <martin.aarhof@gmail.com>
  *
- * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
  */
 
 /**
- * Array of types
+ * Array of types.
  */
+
 namespace Lsv\Yatzee;
 
 /**
@@ -21,14 +23,14 @@ namespace Lsv\Yatzee;
 class Types
 {
     /**
-     * Types
+     * Types.
      *
      * @var TypeInterface[]
      */
     protected $types = [];
 
     /**
-     * Add a type
+     * Add a type.
      *
      * @param TypeInterface $type
      */
@@ -38,7 +40,7 @@ class Types
     }
 
     /**
-     * Get types
+     * Get types.
      *
      * @return TypeInterface[]
      */

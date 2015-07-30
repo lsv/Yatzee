@@ -5,25 +5,26 @@
  *
  * (c) Martin Aarhof <martin.aarhof@gmail.com>
  *
- * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
  */
 
 /**
- * Methods for types
+ * Methods for types.
  */
+
 namespace Lsv\Yatzee\Types;
 
 use Lsv\Yatzee\OutputData;
 use Lsv\Yatzee\TypeInterface;
 
 /**
- * Class AbstractType
- * @package Lsv\Yatzee\Types
+ * Class AbstractType.
  */
 abstract class AbstractType implements TypeInterface
 {
     /**
-     * Dice values
+     * Dice values.
      *
      * @var array
      */
@@ -40,7 +41,7 @@ abstract class AbstractType implements TypeInterface
     }
 
     /**
-     * Get nice dices
+     * Get nice dices.
      *
      * @param int $dice
      *
@@ -67,10 +68,11 @@ abstract class AbstractType implements TypeInterface
     }
 
     /**
-     * Transform dices to values
+     * Transform dices to values.
      *
      * @param array $dices
-     * @param int $dicesize
+     * @param int   $dicesize
+     *
      * @return array
      */
     protected function getValues(array $dices, $dicesize)
@@ -84,10 +86,11 @@ abstract class AbstractType implements TypeInterface
     }
 
     /**
-     * Write percent
+     * Write percent.
      *
      * @param int $rolls
      * @param int $timesHit
+     *
      * @return string
      */
     protected function writePercent($rolls, $timesHit)
@@ -96,9 +99,9 @@ abstract class AbstractType implements TypeInterface
     }
 
     /**
-     * Calculate dice array
+     * Calculate dice array.
      *
-     * @param int $roll
+     * @param int   $roll
      * @param mixed $key1
      * @param mixed $key2
      */
@@ -116,12 +119,13 @@ abstract class AbstractType implements TypeInterface
     }
 
     /**
-     * Write for multiple dice sizes
+     * Write for multiple dice sizes.
      *
-     * @param int $size1
-     * @param int $size2
-     * @param int $rolls
+     * @param int        $size1
+     * @param int        $size2
+     * @param int        $rolls
      * @param OutputData $output
+     *
      * @return OutputData
      */
     protected function writeMultiple($size1, $size2, $rolls, OutputData $output)

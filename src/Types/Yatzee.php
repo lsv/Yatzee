@@ -5,29 +5,30 @@
  *
  * (c) Martin Aarhof <martin.aarhof@gmail.com>
  *
- * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
  */
 
 /**
- * Counter for yatzees
+ * Counter for yatzees.
  */
+
 namespace Lsv\Yatzee\Types;
 
 /**
- * Class Yatzee
- * @package Lsv\Yatzee\Types
+ * Class Yatzee.
  */
 class Yatzee extends AbstractOfaKind
 {
     /**
-     * How many of the kind do we need
+     * How many of the kind do we need.
      *
      * @var int
      */
     protected $ofaKind = 0;
 
     /**
-     * Is it valid
+     * Is it valid.
      *
      * @param int $numDices
      *
@@ -39,7 +40,7 @@ class Yatzee extends AbstractOfaKind
     }
 
     /**
-     * Count the values
+     * Count the values.
      *
      * @param int   $numRoll
      * @param array $dices
